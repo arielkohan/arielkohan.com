@@ -109,9 +109,26 @@ nav.navbar-fixed-top {
     font-size: 16px;
     text-align: center; }
 
+.what-section {
+  height: 500px; }
+  .what-section .color-transparent {
+    top: 0;
+    left: 0;
+    right: 0; }
+  .what-section h2 {
+    text-align: right; }
+
 /*******************************************
 		Modules rules
 *******************************************/
+.absolute {
+  position: absolute; }
+
+.color-transparent {
+  width: 100%;
+  height: 100%;
+  padding: 1px 10px; }
+
 .rel-pos {
   position: relative; }
 
@@ -151,7 +168,8 @@ nav.navbar-fixed-top {
 
 .div-img-bg {
   background-size: cover;
-  position: relative;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
   right: 0; }
@@ -159,12 +177,16 @@ nav.navbar-fixed-top {
 p.lead, h2.h2-mont {
   letter-spacing: 1px; }
 
-h2.h2-mont {
-  font-family: 'Montserrat', 'Open Sans', sans-serif;
-  font-weight: bold; }
+h2.h2-mont, h3.h3-mont {
+  font-family: 'Montserrat', 'Open Sans', sans-serif; }
 
 h2.big {
-  font-size: 3em; }
+  font-size: 3em;
+  font-weight: bold; }
+
+h3.big {
+  font-size: 2.4em;
+  font-weight: bold; }
 
 .ppal-section .logo-img {
   display: block;
@@ -349,10 +371,24 @@ nav.navbar-fixed-top #navbar {
   .who-row .rel-pos:hover .overlay {
     background: rgba(0, 0, 0, 0.8); }
 
+.what-section .div-img-bg {
+  background: #000 url("../img/desk-mac-devices.jpeg") no-repeat;
+  background-size: cover;
+  -webkit-filter: grayscale(100%);
+  /* Chrome, Safari, Opera */
+  filter: grayscale(100%); }
+.what-section .color-transparent {
+  background-color: rgba(23, 149, 204, 0.8); }
+.what-section .content {
+  color: white; }
+  .what-section .content .section-title:after {
+    background-color: white;
+    display: block;
+    margin-right: 0;
+    margin-left: auto; }
+
 #bluelight-redlight-transparent {
-  background: linear-gradient(to bottom, rgba(23, 149, 204, 0.8), rgba(255, 100, 100, 0.9));
-  height: 100%;
-  padding: auto 10px; }
+  background: linear-gradient(to bottom, rgba(23, 149, 204, 0.8), rgba(255, 100, 100, 0.9)); }
 
 /**************************
 	 EXTRAS
