@@ -154,8 +154,8 @@ nav.navbar-fixed-top {
 }
 
 .what-section{
-	height:500px;
-
+	//height:500px;
+	display:block;
 	.div-img-bg{	}
 
 	.color-transparent{
@@ -514,7 +514,7 @@ nav.navbar-fixed-top {
 
 .what-section{
 	.div-img-bg{
-		background: #000 url('../img/desk-mac-devices.jpeg') no-repeat ;
+		background: #000 url('../img/desk-mac-devices.jpeg') no-repeat 40% 0% ;
 		background-size:cover;
 		-webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
 	 	filter: grayscale(100%);

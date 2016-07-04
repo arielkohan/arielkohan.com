@@ -110,7 +110,7 @@ nav.navbar-fixed-top {
     text-align: center; }
 
 .what-section {
-  height: 500px; }
+  display: block; }
   .what-section .color-transparent {
     top: 0;
     left: 0;
@@ -372,7 +372,7 @@ nav.navbar-fixed-top #navbar {
     background: rgba(0, 0, 0, 0.8); }
 
 .what-section .div-img-bg {
-  background: #000 url("../img/desk-mac-devices.jpeg") no-repeat;
+  background: #000 url("../img/desk-mac-devices.jpeg") no-repeat 40% 0%;
   background-size: cover;
   -webkit-filter: grayscale(100%);
   /* Chrome, Safari, Opera */
