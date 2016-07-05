@@ -176,7 +176,7 @@ nav.navbar-fixed-top {
 .color-transparent {
 	width: 100%;
   	height: 100%;
-  	padding: 1px 0px;
+  	padding: 1px 0px 10px;
 }
 .rel-pos { position: relative;}
 .hide-nav{
@@ -524,16 +524,21 @@ nav.navbar-fixed-top {
 }
 
 .what-section{
+	//background-color:$lightblue-transparent;
+	background:transparent;
+	padding-bottom:5px;
 	.div-img-bg{
-		background: #000 url('../img/desk-mac-devices.jpeg') no-repeat 40% 0% ;
-		background-size:cover;
-		-webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
-	 	filter: grayscale(100%);
+		/*background: #000 url('../img/desk-mac-devices.jpeg') no-repeat 40% 0% ;
+		background-size:cover;*/
+		background:transparent;
+
+		/*-webkit-filter: grayscale(100%); /* Chrome, Safari, Opera 
+	 	filter: grayscale(100%);*/
 		//padding:1px;
 	  	//margin: 0 auto 10vh;
   	}
   	.color-transparent{
-  		background-color:$lightblue-transparent;
+  		//background-color:$lightblue-transparent;
   	}
   	.content{
   		color: white;

@@ -127,7 +127,7 @@ nav.navbar-fixed-top {
 .color-transparent {
   width: 100%;
   height: 100%;
-  padding: 1px 0px; }
+  padding: 1px 0px 10px; }
 
 .rel-pos {
   position: relative; }
@@ -379,21 +379,22 @@ nav.navbar-fixed-top #navbar {
   .who-row .rel-pos:hover .overlay {
     background: rgba(0, 0, 0, 0.8); }
 
-.what-section .div-img-bg {
-  background: #000 url("../img/desk-mac-devices.jpeg") no-repeat 40% 0%;
-  background-size: cover;
-  -webkit-filter: grayscale(100%);
-  /* Chrome, Safari, Opera */
-  filter: grayscale(100%); }
-.what-section .color-transparent {
-  background-color: rgba(23, 149, 204, 0.8); }
-.what-section .content {
-  color: white; }
-  .what-section .content .section-title:after {
-    background-color: white;
-    display: block;
-    margin-right: 0;
-    margin-left: auto; }
+.what-section {
+  background: transparent;
+  padding-bottom: 5px; }
+  .what-section .div-img-bg {
+    /*background: #000 url('../img/desk-mac-devices.jpeg') no-repeat 40% 0% ;
+    background-size:cover;*/
+    background: transparent;
+    	/*-webkit-filter: grayscale(100%); /* Chrome, Safari, Opera 
+     	filter: grayscale(100%);*/ }
+  .what-section .content {
+    color: white; }
+    .what-section .content .section-title:after {
+      background-color: white;
+      display: block;
+      margin-right: 0;
+      margin-left: auto; }
 
 #bluelight-redlight-transparent {
   background: linear-gradient(to bottom, rgba(23, 149, 204, 0.8), rgba(255, 100, 100, 0.9)); }

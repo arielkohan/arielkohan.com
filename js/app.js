@@ -83,7 +83,7 @@ function addNavLinesInteractivy(){
 
 function initSmoothScroll(){
   var $window = $(window);
-  var scrollTime = 0.8;
+  var scrollTime = 1;
   var scrollDistance = 200;
   $window.on("mousewheel DOMMouseScroll", function(event){
     event.preventDefault(); 
@@ -106,6 +106,7 @@ function initSmoothScroll(){
 ***********************************/
 
 $(document).ready(function(){
+  $(".parallax-window").parallax({imageSrc: './img/desk-mac-devices-bl.jpg'});
   refreshVisibilityNavbar();
   //refreshSections();
   addListenersToScroll();
