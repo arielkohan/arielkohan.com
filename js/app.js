@@ -32,11 +32,11 @@ function addListenersToScroll(){
     " .navbar .nav li a," +
     " .navbar-brand" ).on('click', function(event){
 
+  // Prevent default anchor click behavior
+  event.preventDefault();
   // Make sure this.hash has a value before overriding default behavior
   if (this.hash !== "") {
 
-    // Prevent default anchor click behavior
-    event.preventDefault();
 
     // Store hash (#)
     var hash = this.hash;
@@ -48,7 +48,7 @@ function addListenersToScroll(){
     }, 600,"swing", function(){
 
       // Add hash (#) to URL when done scrolling (default click behavior)
-      window.location.hash = hash;
+     // window.location.hash = hash;
       refreshVisibilityNavbar();
     }) // End if statement
   };

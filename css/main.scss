@@ -176,7 +176,7 @@ nav.navbar-fixed-top {
 .color-transparent {
 	width: 100%;
   	height: 100%;
-  	padding: 1px 10px;
+  	padding: 1px 0px;
 }
 .rel-pos { position: relative;}
 .hide-nav{
@@ -230,6 +230,8 @@ h2.big {
 h3.big{	
 	font-size:2.4em;
 	font-weight: bold;
+
+
 }
 
 .ppal-section{
@@ -336,7 +338,16 @@ h2.big{
 		font-size: 2em;
 	}
 }
-
+h3.big{	
+	@media(max-width: 350px){
+		font-size: 1.6em;
+	}
+}
+p.lead{
+	@media(max-width: 350px){
+		font-size: 1.2em;
+	}
+}
 nav.navbar-fixed-top {
 
 }
