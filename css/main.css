@@ -1,4 +1,7 @@
 /*******************************************
+		MIXINS
+*******************************************/
+/*******************************************
 		COLORS
 *******************************************/
 /*******************************************
@@ -29,7 +32,8 @@
 		Base rules
 *******************************************/
 body {
-  font-family: 'aller', 'Open Sans', sans-serif; }
+  font-family: 'aller', 'Open Sans', sans-serif;
+  background: #555555; }
 
 img {
   max-width: 100%; }
@@ -93,8 +97,7 @@ nav.navbar-fixed-top {
 
 .section {
   max-width: 100%;
-  overflow: hidden;
-  transition: opacity 1s ease-in-out, transform 1s ease-in-out; }
+  overflow: hidden; }
 
 .who-row .rel-pos .overlay {
   position: absolute;
@@ -117,6 +120,10 @@ nav.navbar-fixed-top {
     right: 0; }
   .what-section h2 {
     text-align: right; }
+
+.how-section {
+  background: white;
+  padding: 5% 20px; }
 
 /*******************************************
 		Modules rules
@@ -297,30 +304,20 @@ h3.big {
   -o-transform: scale(1.2, 1.2);
   -ms-transform: scale(1.2, 1.2); }
 
-.who-row {
-  /*@media screen and (min-width: 768px) and (max-width:992px){
-  	height: 800px;
-  }
-  @media screen and (min-width: 992px) and (max-width:1200px){
-  	height: 700px;
-  }
-  @media screen and (min-width: 1200px){
-  	height: 600px;
-  }*/ }
-  .who-row .avatar:hover {
-    transform: scale(1.1, 1.1);
-    -webkit-transform: scale(1.1, 1.1);
-    -moz-transform: scale(1.1, 1.1);
-    -o-transform: scale(1.1, 1.1);
-    -ms-transform: scale(1.1, 1.1);
-    -webkit-filter: grayscale(60%);
-    /* Chrome, Safari, Opera */
-    filter: grayscale(60%); }
-  @media (max-width: 1024px) {
-    .who-row .avatar {
-      min-height: 700px; } }
-  .who-row .rel-pos:hover .overlay {
-    transform: translateY(-100%); }
+.who-row .avatar:hover {
+  transform: scale(1.1, 1.1);
+  -webkit-transform: scale(1.1, 1.1);
+  -moz-transform: scale(1.1, 1.1);
+  -o-transform: scale(1.1, 1.1);
+  -ms-transform: scale(1.1, 1.1);
+  -webkit-filter: grayscale(60%);
+  /* Chrome, Safari, Opera */
+  filter: grayscale(60%); }
+@media (max-width: 1024px) {
+  .who-row .avatar {
+    min-height: 700px; } }
+.who-row .rel-pos:hover .overlay {
+  transform: translateY(-100%); }
 
 /*******************************************
 		Theme Rules
@@ -381,11 +378,11 @@ nav.navbar-fixed-top #navbar {
 
 .what-section {
   background: transparent;
-  padding-bottom: 5px; }
+  padding-bottom: 0; }
   .what-section .div-img-bg {
-    /*background: #000 url('../img/desk-mac-devices.jpeg') no-repeat 40% 0% ;
-    background-size:cover;*/
-    background: transparent;
+    background: #000 url("../img/desk-mac-devices-bl.jpg") no-repeat 50% 0%;
+    background-size: cover;
+    background-attachment: fixed;
     	/*-webkit-filter: grayscale(100%); /* Chrome, Safari, Opera 
      	filter: grayscale(100%);*/ }
   .what-section .content {
@@ -395,6 +392,15 @@ nav.navbar-fixed-top #navbar {
       display: block;
       margin-right: 0;
       margin-left: auto; }
+
+.how-section {
+  background: white;
+  color: white; }
+  .how-section .section-title:after {
+    background-color: white;
+    display: block;
+    margin-right: 0;
+    margin-left: auto; }
 
 #bluelight-redlight-transparent {
   background: linear-gradient(to bottom, rgba(23, 149, 204, 0.8), rgba(255, 100, 100, 0.9)); }

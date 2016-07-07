@@ -1,4 +1,83 @@
 /*******************************************
+		MIXINS
+*******************************************/
+// mixin
+@mixin angle($pseudo, $flip: false, $angle: 1.5deg, $color: white, $height:30%) {
+  // Possible values for $pseudo are: before, after, both
+  @if $pseudo == 'before' or $pseudo == 'after' or $pseudo == 'both' {
+    position: relative;
+    z-index: 1;
+    $selector: if($pseudo == 'both', '&:before,&:after', '&:#{$pseudo}');
+
+    #{$selector} {
+      background: $color;
+      content: '';
+      display: block;
+      height: $height;
+      left: 0;
+      position: absolute;
+      right: 0;
+      z-index: -1;
+      -webkit-backface-visibility: hidden; // for Chrome Windows
+    }
+
+    @if $pseudo == 'before' {
+      #{$selector} {
+        top: 0;
+
+        @if $flip {
+          transform: skewY($angle * -1);
+          transform-origin: 0 0;
+        } @else {
+          transform: skewY($angle);
+          transform-origin: 100% 0;
+        }
+      }
+    }
+
+    @if $pseudo == 'after' {
+      #{$selector} {
+        bottom: 0;
+
+        @if $flip {
+          transform: skewY($angle);
+          transform-origin: 0 100%;
+        } @else {
+          transform: skewY($angle * -1);
+          transform-origin: 100%;
+        }
+      }
+    }
+
+    @if $pseudo == 'both' {
+      &:before {
+        top: 0;
+
+        @if $flip {
+          transform: skewY($angle * -1);
+          transform-origin: 0 0;
+        } @else {
+          transform: skewY($angle);
+          transform-origin: 100% 0;
+        }
+      }
+
+      &:after {
+        bottom: 0;
+
+        @if $flip {
+          transform: skewY($angle);
+          transform-origin: 0 0;
+        } @else {
+          transform: skewY($angle * -1);
+          transform-origin: 100%;
+        }
+      }
+    }
+  }
+}
+
+/*******************************************
 		COLORS
 *******************************************/
 $darkgrey: #5e5e5e;
@@ -47,7 +126,7 @@ $gradient-redbluelight-tobottom: linear-gradient(to bottom, $lightblue-transpare
 /*******************************************
 		Base rules
 *******************************************/
-body {	font-family: 'aller', 'Open Sans', sans-serif; }
+body {	font-family: 'aller', 'Open Sans', sans-serif; background: $gray; }
 
 img{	max-width: 100%;	}
 
@@ -128,7 +207,6 @@ nav.navbar-fixed-top {
 .section {	
   	max-width: 100%;
   	overflow: hidden;
-  	transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
 .who-row{
@@ -168,6 +246,12 @@ nav.navbar-fixed-top {
 	}
 	
 }
+
+.how-section{
+	background: white;
+	padding: 5% 20px;
+}
+	
 
 /*******************************************
 		Modules rules
@@ -387,15 +471,6 @@ nav.navbar-fixed-top {
 }
 .who-row{
 
-	/*@media screen and (min-width: 768px) and (max-width:992px){
-		height: 800px;
-	}
-	@media screen and (min-width: 992px) and (max-width:1200px){
-		height: 700px;
-	}
-	@media screen and (min-width: 1200px){
-		height: 600px;
-	}*/
 	.avatar {
 		&:hover{
 			transform: scale(1.1,1.1);
@@ -526,11 +601,11 @@ nav.navbar-fixed-top {
 .what-section{
 	//background-color:$lightblue-transparent;
 	background:transparent;
-	padding-bottom:5px;
+	padding-bottom:0;
 	.div-img-bg{
-		/*background: #000 url('../img/desk-mac-devices.jpeg') no-repeat 40% 0% ;
-		background-size:cover;*/
-		background:transparent;
+		background: #000 url('../img/desk-mac-devices-bl.jpg') no-repeat 50% 0% ;
+		background-size:cover;
+		background-attachment: fixed;
 
 		/*-webkit-filter: grayscale(100%); /* Chrome, Safari, Opera 
 	 	filter: grayscale(100%);*/
@@ -552,6 +627,17 @@ nav.navbar-fixed-top {
 
   	}
   	
+}
+
+.how-section {
+	background: white;
+	color: white;
+	.section-title:after{
+		background-color:white;
+		display: block;
+		margin-right:0;
+		margin-left:auto;
+	}
 }
 
 #bluelight-redlight-transparent{

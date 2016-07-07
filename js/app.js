@@ -11,7 +11,7 @@ function refreshVisibilityNavbar(){
   } else {
    if($(window).width() < 768 )
       $(".collapse").collapse("hide");
-    $nav.addClass("hide-nav");
+    $nav.addClass("hide-nav").removeClass("white-transparent-bg");
   }
 }
 
@@ -45,7 +45,7 @@ function addListenersToScroll(){
     // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area (the speed of the animation)
     $('html, body').animate({
       scrollTop: $(hash).offset().top-60
-    }, 600,"swing", function(){
+    }, 800,"swing", function(){
 
       // Add hash (#) to URL when done scrolling (default click behavior)
      // window.location.hash = hash;
@@ -106,12 +106,12 @@ function initSmoothScroll(){
 ***********************************/
 
 $(document).ready(function(){
-  $(".parallax-window").parallax({imageSrc: './img/desk-mac-devices-bl.jpg'});
+//  $(".parallax-window").parallax({imageSrc: './img/desk-mac-devices-bl.jpg'});
   refreshVisibilityNavbar();
   //refreshSections();
   addListenersToScroll();
   addNavLinesInteractivy();
-  initSmoothScroll();
+ // initSmoothScroll();
 
   //$(document).scroll(function(){
   $(document).on("scroll",function(){
