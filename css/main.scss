@@ -1,14 +1,29 @@
 /*******************************************
+		IMPORTS
+*******************************************/
+@import "fa_variables";
+@import "fa_mixins";
+@import "fa_path";
+@import "fa_core";
+@import "fa_larger";
+@import "fa_fixed-width";
+@import "fa_list";
+@import "fa_bordered-pulled";
+@import "fa_animated";
+@import "fa_rotated-flipped";
+@import "fa_stacked";
+@import "fa_icons";
+@import "fa_screen-reader";
+
+/*******************************************
 		MIXINS
 *******************************************/
-// mixin
 @mixin angle($pseudo, $flip: false, $angle: 1.5deg, $color: white, $height:30%) {
   // Possible values for $pseudo are: before, after, both
   @if $pseudo == 'before' or $pseudo == 'after' or $pseudo == 'both' {
     position: relative;
     z-index: 1;
     $selector: if($pseudo == 'both', '&:before,&:after', '&:#{$pseudo}');
-
     #{$selector} {
       background: $color;
       content: '';
@@ -20,11 +35,9 @@
       z-index: -1;
       -webkit-backface-visibility: hidden; // for Chrome Windows
     }
-
     @if $pseudo == 'before' {
       #{$selector} {
         top: 0;
-
         @if $flip {
           transform: skewY($angle * -1);
           transform-origin: 0 0;
@@ -34,7 +47,6 @@
         }
       }
     }
-
     @if $pseudo == 'after' {
       #{$selector} {
         bottom: 0;
@@ -48,11 +60,9 @@
         }
       }
     }
-
     @if $pseudo == 'both' {
       &:before {
         top: 0;
-
         @if $flip {
           transform: skewY($angle * -1);
           transform-origin: 0 0;
@@ -61,7 +71,6 @@
           transform-origin: 100% 0;
         }
       }
-
       &:after {
         bottom: 0;
 
@@ -76,7 +85,6 @@
     }
   }
 }
-
 /*******************************************
 		COLORS
 *******************************************/
@@ -87,10 +95,8 @@ $gray-transparent: rgba(85, 85, 85,0.6);
 $lightblue:rgba(23, 149, 204, 1);
 $redlight:rgba(255, 100,100, 1);
 $lightblue-transparent: rgba(23, 149, 204, 0.8);
-//$lightblue-very-transparent: rgba(23, 149, 204, 0.5);
 $redlight-transparent:rgba(255, 100,100, 0.9);
 $gradient-redbluelight-tobottom: linear-gradient(to bottom, $lightblue-transparent, $redlight-transparent);
-
 /*******************************************
 		Fonts
 *******************************************/
@@ -122,16 +128,12 @@ $gradient-redbluelight-tobottom: linear-gradient(to bottom, $lightblue-transpare
     font-weight: bold;
     font-style: normal;
 }
-
 /*******************************************
 		Base rules
 *******************************************/
 body {	font-family: 'aller', 'Open Sans', sans-serif; background: $gray; }
-
 img{	max-width: 100%;	}
-
 p {	text-align: justify;	}
-
 /*******************************************
 		Layout rules 
 *******************************************/
@@ -152,13 +154,11 @@ nav.navbar-fixed-top {
 		min-height: 60px;
 
 		ul.nav{
-
 			li{
 				transition: border-color 1s ;
 				transition-timing-function: ease-in-out;
 				border-top: transparent 5px solid;
 				border-bottom: transparent 5px solid;
-
 				&.top-navline, &.bottom-navline{
 					border: none;
 					content:"";
@@ -168,19 +168,13 @@ nav.navbar-fixed-top {
 					//background-color:$lightblue;
 					transition: background-color .4s, width .3s, left .3s, top .3s;
 					transition-timing-function: ease-in-out,ease-in-out,linear,linear;
-
 				}
 				&.active{
-					/*border-top-color: $lightblue-transparent;
-					border-bottom-color: $lightblue-transparent;*/
 					a{
 						padding-top: 15px;
 						padding-bottom:15px;
-						/*background:transparent;
-						color: $redlight;*/
 					}
 				}
-
 				a {
 					padding-top:15px;
 					padding-bottom: 15px;
@@ -198,7 +192,6 @@ nav.navbar-fixed-top {
 		transition-timing-function: ease-in-out;
 	}
 }
-
 .ppal-section {
 	overflow:hidden;
 	min-height: 100vh;
@@ -208,7 +201,6 @@ nav.navbar-fixed-top {
   	max-width: 100%;
   	overflow: hidden;
 }
-
 .who-row{
 	.rel-pos{
 		.overlay{
@@ -217,7 +209,6 @@ nav.navbar-fixed-top {
 			top: 100%;
 			padding: 25px 25px 40px;
 			transition: transform .6s ease-in-out, background .6s ease-in-out;
-
 			h3{
 				text-align: center;
 				font-family: "Montserrat";
@@ -226,16 +217,13 @@ nav.navbar-fixed-top {
 				font-size: 16px;
 				text-align: center;
 			}
-
 		}
 	}
 }
 
 .what-section{
-	//height:500px;
 	display:block;
 	.div-img-bg{	}
-
 	.color-transparent{
 		top: 0;
 		left: 0;
@@ -244,15 +232,28 @@ nav.navbar-fixed-top {
 	h2{
 		text-align: right;
 	}
-	
 }
-
 .how-section{
 	background: white;
-	padding: 5% 20px;
-}
-	
+	padding: 3% 20px;
+	h2{
+		text-align:center;
+		margin: auto auto 80px;
 
+	}
+	h3.big{
+		margin-bottom: 50px;
+	}
+
+	.thumbnail{
+
+		.caption{
+			h3,p{
+				text-align: center;
+			}
+		}
+	}
+}
 /*******************************************
 		Modules rules
 *******************************************/
@@ -277,7 +278,7 @@ nav.navbar-fixed-top {
     font-size: 21px;
 	}
 }
-.padding-response{	padding: 0 10% 5%; }
+.padding-response{	padding: 1px 10% 5%; }
 
 .total-height { height: 100%;}
 
@@ -302,7 +303,7 @@ nav.navbar-fixed-top {
   	right: 0;
 }
 
-p.lead , h2.h2-mont { letter-spacing: 1px; 	 }
+p.lead , h2.h2-mont, h3.h3-mont { letter-spacing: 1px; 	 }
 
 h2.h2-mont,h3.h3-mont{
 	font-family: 'Montserrat', 'Open Sans', sans-serif;
@@ -314,8 +315,6 @@ h2.big {
 h3.big{	
 	font-size:2.4em;
 	font-weight: bold;
-
-
 }
 
 .ppal-section{
@@ -432,9 +431,6 @@ p.lead{
 		font-size: 1.2em;
 	}
 }
-nav.navbar-fixed-top {
-
-}
 
 .ppal-section{
 	.logo-img{
@@ -469,8 +465,8 @@ nav.navbar-fixed-top {
   		}
 	}
 }
-.who-row{
 
+.who-row {
 	.avatar {
 		&:hover{
 			transform: scale(1.1,1.1);
@@ -482,7 +478,6 @@ nav.navbar-fixed-top {
  			filter: grayscale(60%);
 		}
 		@media (max-width: 1024px){
-			//margin: 0 auto 0px;
 			min-height: 700px;
 		}
 	}
@@ -496,9 +491,6 @@ nav.navbar-fixed-top {
 		Theme Rules
 *******************************************/
 nav.navbar-fixed-top {
-	//background-color: transparent;
-	
-
 	.navbar-brand{
 		color: $gray;
 		&:hover{
@@ -516,7 +508,6 @@ nav.navbar-fixed-top {
 
 		.icon-bar {
 			background-color: $gray;
-
 		}
 	}
 
@@ -526,8 +517,6 @@ nav.navbar-fixed-top {
 		ul.nav{
 			li{
 				&.active{
-					/*border-top-color: $lightblue-transparent;
-					border-bottom-color: $lightblue-transparent;*/
 					a{
 						background:transparent;
 						//color: $redlight;
@@ -555,14 +544,11 @@ nav.navbar-fixed-top {
 			}
 		}
 	}
-	
 
 	#navbar {
-
 		@media (max-width: 767px){
 					background-color: rgba(255,255,255,1);
 				}
-		
 	}
 }
 
@@ -599,21 +585,12 @@ nav.navbar-fixed-top {
 }
 
 .what-section{
-	//background-color:$lightblue-transparent;
 	background:transparent;
 	padding-bottom:0;
 	.div-img-bg{
 		background: #000 url('../img/desk-mac-devices-bl.jpg') no-repeat 50% 0% ;
 		background-size:cover;
 		background-attachment: fixed;
-
-		/*-webkit-filter: grayscale(100%); /* Chrome, Safari, Opera 
-	 	filter: grayscale(100%);*/
-		//padding:1px;
-	  	//margin: 0 auto 10vh;
-  	}
-  	.color-transparent{
-  		//background-color:$lightblue-transparent;
   	}
   	.content{
   		color: white;
@@ -630,13 +607,27 @@ nav.navbar-fixed-top {
 }
 
 .how-section {
-	background: white;
+	background: $redlight;
 	color: white;
+	h3{
+		text-align: left;
+		padding: 8px 10px;
+		border-radius:5px;
+	}
+	.revert {
+		background: $lightblue-transparent;
+		color: white;
+	}
 	.section-title:after{
 		background-color:white;
 		display: block;
-		margin-right:0;
 		margin-left:auto;
+		margin-right:auto;
+	}
+	.thumbnail{
+		.caption{
+			color: $gray;
+		}
 	}
 }
 
