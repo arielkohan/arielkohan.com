@@ -88,8 +88,9 @@
 /*******************************************
 		COLORS
 *******************************************/
-$darkgrey: #5e5e5e;
-$orange: #FFA600;
+$yellow-light: #EED9A0;
+$yellow-dark: #D1BE8F;
+$blue-dark: #0B1135;
 $gray: rgba(85, 85, 85,1);
 $gray-transparent: rgba(85, 85, 85,0.6);
 $lightblue:rgba(23, 149, 204, 1);
@@ -131,7 +132,7 @@ $gradient-redbluelight-tobottom: linear-gradient(to bottom, rgba(23, 149, 204, 0
 /*******************************************
 		Base rules
 *******************************************/
-body {	font-family: 'aller', 'Open Sans', sans-serif; background: $gray; }
+body {	font-family: 'aller', 'Open Sans', sans-serif; background: white; }
 img{	max-width: 100%;	}
 p {	text-align: justify;	}
 /*******************************************
@@ -393,7 +394,7 @@ h3.big{
 
 	.normal{
 	  	//color: rgba(255,255,255,0.8);
-	  	color: $gray;
+	  	color: $blue-dark;
 	  	display: block;
 	  	text-align: center;
 	  	font-size: 2.5em;
@@ -403,7 +404,7 @@ h3.big{
 
 	p.quote-lead {
   		text-align: center;
-	  	color: rgba(255,255,255,0.90);
+	  	color: $blue-dark;
 		font-weight: bold;
 	    margin-bottom: 10vh;
 	}
@@ -567,9 +568,9 @@ p.lead{
 *******************************************/
 nav.navbar-fixed-top {
 	.navbar-brand{
-		color: $gray;
+		color: #999;
 		&:hover{
-			color:$lightblue;
+			color:$blue-dark;
 		}
 	}
 	&.white-transparent-bg{
@@ -579,10 +580,10 @@ nav.navbar-fixed-top {
 
 	button.navbar-toggle {
 		background-color:white;
-		border-color: $gray;
+		border-color: $blue-dark;
 
 		.icon-bar {
-			background-color: $gray;
+			background-color: $blue-dark;
 		}
 	}
 
@@ -595,10 +596,10 @@ nav.navbar-fixed-top {
 					a{
 						background:transparent;
 						//color: $redlight;
-						color: $gray;
+						color: $blue-dark;
 
 						@media (max-width: 767px){
-							color: $redlight;
+							color: $blue-dark;
 						}
 					}
 				}
@@ -610,7 +611,7 @@ nav.navbar-fixed-top {
 					}
 				}
 				&.top-navline, &.bottom-navline{
-					background:$lightblue;
+					background:$blue-dark;
 
 					@media(max-width:767px){
 						visibility: hidden;
@@ -637,26 +638,38 @@ nav.navbar-fixed-top {
 
 .ppal-section{
 	.button-div {
-		button {
-			background-color: rgba(255,255,255,0.9);		
+		button.btn {
+			background-color: $yellow-light;	
+			border-color: rgba(11, 17, 53,0.3);
+			&:hover{
+				background-color: $yellow-dark;
+			}
+			a{
+				color: $blue-dark;
+			}	
 		}
 	}
 }
-
+.who-section{
+	background: $blue-dark;
+}
 .who-row{
-	background: rgba(85, 85, 85,1);
-	color: white;
+	background: $blue-dark;
+	color: $yellow-light;
+	strong {
+		color: white;
+	}
 	h2 {
-		color: $redlight;
+		color: $yellow-light;
 	}
 	.section-title {
 		&:after{
-			background-color: $redlight;
+			background-color: $yellow-light;
 		}
 	}
 	.rel-pos:hover{
 		.overlay{
-			background: rgba(0,0,0, 0.8);
+			background: rgba(11, 17, 53,0.9);
 		}
 	}
 }
@@ -665,15 +678,16 @@ nav.navbar-fixed-top {
 	background:transparent;
 	padding-bottom:0;
 	.div-img-bg{
-		background: #000 url('../img/desk-mac-devices-bl.jpg') no-repeat 50% 0% ;
+		background: #000 url('../img/desk-mac-devices-wh.jpg') no-repeat 50% 0% ;
 		background-size:cover;
 		background-attachment: fixed;
   	}
   	.content{
-  		color: white;
+  		color: $blue-dark;
+	    text-shadow: 0px 1px 5px white;
 
   		.section-title:after{
-  			background-color:white;
+  			background-color:$blue-dark;
   			display: block;
   			margin-right:0;
   			margin-left:auto;
@@ -684,32 +698,37 @@ nav.navbar-fixed-top {
 }
 
 .how-section {
-	background: $redlight;
-	color: white;
+	background: $yellow-light;
+	color: $blue-dark;
 	h3{
 		text-align: left;
 		padding: 8px 10px;
 		border-radius:5px;
 	}
 	.revert {
-		background: $lightblue-transparent;
+		background: $blue-dark;
 		color: white;
 	}
 	.section-title:after{
-		background-color:white;
+		background-color:$blue-dark;
 		display: block;
 		margin-left:auto;
 		margin-right:auto;
 	}
 	.thumbnail{
+		a.active{
+			h3{
+				color: $blue-dark;
+			}
+		}
 		.caption{
-			color: $gray;
+			color: $blue-dark;
 			h3{
 				color:$gray;
 			}
 			a:hover{
 				h3{
-					color: black;
+					color: $blue-dark;
 				}
 			}
 		}

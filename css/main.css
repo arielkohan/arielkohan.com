@@ -2219,7 +2219,7 @@
 *******************************************/
 body {
   font-family: 'aller', 'Open Sans', sans-serif;
-  background: #555555; }
+  background: white; }
 
 img {
   max-width: 100%; }
@@ -2436,7 +2436,7 @@ h3.big {
   margin: 0 auto 10vh;
   padding: 5% 0 2%; }
 .ppal-section .normal {
-  color: #555555;
+  color: #0B1135;
   display: block;
   text-align: center;
   font-size: 2.5em;
@@ -2444,7 +2444,7 @@ h3.big {
   letter-spacing: 2px; }
 .ppal-section p.quote-lead {
   text-align: center;
-  color: rgba(255, 255, 255, 0.9);
+  color: #0B1135;
   font-weight: bold;
   margin-bottom: 10vh; }
 .ppal-section .button-div {
@@ -2561,31 +2561,31 @@ h3.big {
 		Theme Rules
 *******************************************/
 nav.navbar-fixed-top .navbar-brand {
-  color: #555555; }
+  color: #999; }
   nav.navbar-fixed-top .navbar-brand:hover {
-    color: #1795cc; }
+    color: #0B1135; }
 nav.navbar-fixed-top.white-transparent-bg {
   background-color: white; }
 nav.navbar-fixed-top button.navbar-toggle {
   background-color: white;
-  border-color: #555555; }
+  border-color: #0B1135; }
   nav.navbar-fixed-top button.navbar-toggle .icon-bar {
-    background-color: #555555; }
+    background-color: #0B1135; }
 nav.navbar-fixed-top #navbar {
   font-family: "Montserrat";
   letter-spacing: 1px; }
   nav.navbar-fixed-top #navbar ul.nav li.active a {
     background: transparent;
-    color: #555555; }
+    color: #0B1135; }
     @media (max-width: 767px) {
       nav.navbar-fixed-top #navbar ul.nav li.active a {
-        color: #ff6464; } }
+        color: #0B1135; } }
   nav.navbar-fixed-top #navbar ul.nav li a {
     color: rgba(85, 85, 85, 0.6); }
     nav.navbar-fixed-top #navbar ul.nav li a:hover {
       color: #555555; }
   nav.navbar-fixed-top #navbar ul.nav li.top-navline, nav.navbar-fixed-top #navbar ul.nav li.bottom-navline {
-    background: #1795cc; }
+    background: #0B1135; }
     @media (max-width: 767px) {
       nav.navbar-fixed-top #navbar ul.nav li.top-navline, nav.navbar-fixed-top #navbar ul.nav li.bottom-navline {
         visibility: hidden; } }
@@ -2599,55 +2599,68 @@ nav.navbar-fixed-top #navbar {
   background-size: cover;
   margin: 0 auto 10vh; }
 
-.ppal-section .button-div button {
-  background-color: rgba(255, 255, 255, 0.9); }
+.ppal-section .button-div button.btn {
+  background-color: #EED9A0;
+  border-color: rgba(11, 17, 53, 0.3); }
+  .ppal-section .button-div button.btn:hover {
+    background-color: #D1BE8F; }
+  .ppal-section .button-div button.btn a {
+    color: #0B1135; }
+
+.who-section {
+  background: #0B1135; }
 
 .who-row {
-  background: #555555;
-  color: white; }
+  background: #0B1135;
+  color: #EED9A0; }
+  .who-row strong {
+    color: white; }
   .who-row h2 {
-    color: #ff6464; }
+    color: #EED9A0; }
   .who-row .section-title:after {
-    background-color: #ff6464; }
+    background-color: #EED9A0; }
   .who-row .rel-pos:hover .overlay {
-    background: rgba(0, 0, 0, 0.8); }
+    background: rgba(11, 17, 53, 0.9); }
 
 .what-section {
   background: transparent;
   padding-bottom: 0; }
   .what-section .div-img-bg {
-    background: #000 url("../img/desk-mac-devices-bl.jpg") no-repeat 50% 0%;
+    background: #000 url("../img/desk-mac-devices-wh.jpg") no-repeat 50% 0%;
     background-size: cover;
     background-attachment: fixed; }
   .what-section .content {
-    color: white; }
+    color: #0B1135;
+    text-shadow: 0px 1px 5px white; }
     .what-section .content .section-title:after {
-      background-color: white;
+      background-color: #0B1135;
       display: block;
       margin-right: 0;
       margin-left: auto; }
 
 .how-section {
-  background: #ff6464;
-  color: white; }
+  background: #EED9A0;
+  color: #0B1135; }
   .how-section h3 {
     text-align: left;
     padding: 8px 10px;
     border-radius: 5px; }
   .how-section .revert {
-    background: rgba(23, 149, 204, 0.8);
+    background: #0B1135;
     color: white; }
   .how-section .section-title:after {
-    background-color: white;
+    background-color: #0B1135;
     display: block;
     margin-left: auto;
     margin-right: auto; }
+  .how-section .thumbnail a.active h3 {
+    color: #0B1135; }
   .how-section .thumbnail .caption {
-    color: #555555; }
+    color: #0B1135; }
     .how-section .thumbnail .caption h3 {
       color: #555555; }
     .how-section .thumbnail .caption a:hover h3 {
-      color: black; }
+      color: #0B1135; }
 
 #bluelight-redlight-transparent {
   background: linear-gradient(to bottom, rgba(23, 149, 204, 0), rgba(255, 100, 100, 0.4)); }
