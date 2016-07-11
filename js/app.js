@@ -45,7 +45,7 @@ function addListenersToScroll(){
     // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area (the speed of the animation)
     $('html, body').animate({
       scrollTop: $(hash).offset().top-60
-    }, 800,"swing", function(){
+    }, 600,"swing", function(){
 
       // Add hash (#) to URL when done scrolling (default click behavior)
      // window.location.hash = hash;
@@ -100,6 +100,15 @@ function initSmoothScroll(){
   });
 }
 
+function initThumbnailsToggle(){
+  $(".js-show-desc").on("click", function(){
+    if($(this).hasClass("active"))
+      $(this).removeClass("active");
+    else 
+      $(this).addClass("active");
+    $(this).siblings(".description").slideToggle("slow");
+  });
+}
 
 /***********************************
             APP
@@ -111,6 +120,7 @@ $(document).ready(function(){
   //refreshSections();
   addListenersToScroll();
   addNavLinesInteractivy();
+  initThumbnailsToggle();
  // initSmoothScroll();
 
   //$(document).scroll(function(){

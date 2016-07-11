@@ -2310,12 +2310,26 @@ nav.navbar-fixed-top {
     margin: auto auto 80px; }
   .how-section h3.big {
     margin-bottom: 50px; }
+  .how-section .thumbnail i {
+    transition: transform .6s ease-in-out; }
+  .how-section .thumbnail .show-desc {
+    text-decoration: none;
+    cursor: pointer; }
+  .how-section .thumbnail .caption .description {
+    padding-top: 10px; }
   .how-section .thumbnail .caption h3, .how-section .thumbnail .caption p {
     text-align: center; }
+  .how-section .thumbnail .caption h3 {
+    transition: color .3s ease-out;
+    margin: 0;
+    padding: 10px; }
 
 /*******************************************
 		Modules rules
 *******************************************/
+.right {
+  float: right; }
+
 .absolute {
   position: absolute; }
 
@@ -2345,6 +2359,9 @@ nav.navbar-fixed-top {
 
 .padding-response {
   padding: 1px 10% 5%; }
+  @media (max-width: 720px) {
+    .padding-response {
+      padding: 1px 5% 5%; } }
 
 .total-height {
   height: 100%; }
@@ -2360,6 +2377,36 @@ nav.navbar-fixed-top {
   min-width: 100vw;
   height: 100%;
   width: 100%; }
+
+.flex-container {
+  display: flex; }
+  .flex-container.flex-wrap {
+    flex-wrap: wrap; }
+  .flex-container.flex-dir-row {
+    flex-direction: row; }
+  .flex-container.flex-dir-col {
+    flex-direction: column; }
+  .flex-container.flex-just-sp-bt {
+    justify-content: space-between; }
+  .flex-container.flex-just-center {
+    justify-content: center; }
+  .flex-container.flex-align-start {
+    align-items: flex-start; }
+
+.flex-item.flex-eq-grow {
+  flex-grow: 1; }
+.flex-item.thumb-flex {
+  width: 33%;
+  padding: 10px; }
+  @media (min-width: 678px) and (max-width: 1024px) {
+    .flex-item.thumb-flex {
+      width: 50%; } }
+  @media (max-width: 677px) {
+    .flex-item.thumb-flex {
+      width: 100%; } }
+
+.thumbnail .description {
+  display: none; }
 
 .div-img-bg {
   background-size: cover;
@@ -2389,7 +2436,7 @@ h3.big {
   margin: 0 auto 10vh;
   padding: 5% 0 2%; }
 .ppal-section .normal {
-  color: rgba(255, 255, 255, 0.8);
+  color: #555555;
   display: block;
   text-align: center;
   font-size: 2.5em;
@@ -2507,6 +2554,9 @@ h3.big {
 .who-row .rel-pos:hover .overlay {
   transform: translateY(-100%); }
 
+.thumbnail a.active i {
+  transform: rotate(180deg); }
+
 /*******************************************
 		Theme Rules
 *******************************************/
@@ -2544,7 +2594,8 @@ nav.navbar-fixed-top #navbar {
     background-color: white; } }
 
 .principal-img-bg {
-  background: #000 url("../img/desk-macbook.jpg") no-repeat 80% 60%;
+  background: #000 url("../img/hero.jpg") no-repeat 80% 50%;
+  background-attachment: fixed;
   background-size: cover;
   margin: 0 auto 10vh; }
 
@@ -2593,9 +2644,13 @@ nav.navbar-fixed-top #navbar {
     margin-right: auto; }
   .how-section .thumbnail .caption {
     color: #555555; }
+    .how-section .thumbnail .caption h3 {
+      color: #555555; }
+    .how-section .thumbnail .caption a:hover h3 {
+      color: black; }
 
 #bluelight-redlight-transparent {
-  background: linear-gradient(to bottom, rgba(23, 149, 204, 0.8), rgba(255, 100, 100, 0.9)); }
+  background: linear-gradient(to bottom, rgba(23, 149, 204, 0), rgba(255, 100, 100, 0.4)); }
 
 /**************************
 	 EXTRAS

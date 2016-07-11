@@ -96,7 +96,7 @@ $lightblue:rgba(23, 149, 204, 1);
 $redlight:rgba(255, 100,100, 1);
 $lightblue-transparent: rgba(23, 149, 204, 0.8);
 $redlight-transparent:rgba(255, 100,100, 0.9);
-$gradient-redbluelight-tobottom: linear-gradient(to bottom, $lightblue-transparent, $redlight-transparent);
+$gradient-redbluelight-tobottom: linear-gradient(to bottom, rgba(23, 149, 204, 0),rgba(255, 100,100, 0.4));
 /*******************************************
 		Fonts
 *******************************************/
@@ -246,10 +246,24 @@ nav.navbar-fixed-top {
 	}
 
 	.thumbnail{
-
+		i{
+			transition: transform .6s ease-in-out;
+		}
+		.show-desc{
+			text-decoration: none;
+			cursor:pointer;
+		}
 		.caption{
+			.description{
+				padding-top:10px;
+			}
 			h3,p{
 				text-align: center;
+			}
+			h3{
+				transition: color .3s ease-out;
+				margin: 0;
+				padding:10px;
 			}
 		}
 	}
@@ -257,6 +271,7 @@ nav.navbar-fixed-top {
 /*******************************************
 		Modules rules
 *******************************************/
+.right {	float: right;	}
 .absolute{	position: absolute;	 }
 .color-transparent {
 	width: 100%;
@@ -278,7 +293,12 @@ nav.navbar-fixed-top {
     font-size: 21px;
 	}
 }
-.padding-response{	padding: 1px 10% 5%; }
+.padding-response{
+	padding: 1px 10% 5%;
+	@media(max-width:720px){
+		padding: 1px 5% 5%;
+	}
+}
 
 .total-height { height: 100%;}
 
@@ -291,6 +311,52 @@ nav.navbar-fixed-top {
   	min-width: 100vw;
   	height: 100%;
   	width: 100%;
+}
+
+.flex-container{
+	  display: flex; 
+	  &.flex-wrap{
+	  	flex-wrap: wrap;
+	  }
+	  &.flex-dir-row{
+	  	flex-direction: row;
+	  }
+	  &.flex-dir-col{
+	  	flex-direction: column;
+	  }
+	  &.flex-just-sp-bt{
+	  	justify-content: space-between;
+	  }
+	  &.flex-just-center{
+	  	justify-content: center;
+	  }
+	  &.flex-align-start{
+	  	align-items: flex-start;
+	  }
+}
+
+
+
+.flex-item{
+	&.flex-eq-grow{
+	  	flex-grow: 1;
+  	}
+  	&.thumb-flex{
+  		width: 33%;
+  		padding:10px;
+  		@media (min-width: 678px) and (max-width:1024px){
+  			width: 50%;
+  		}
+  		@media (max-width:677px){
+  			width: 100%;
+  		}
+  	}
+}
+
+.thumbnail{
+	.description{
+		display: none;
+	}
 }
 
 .div-img-bg {
@@ -326,7 +392,8 @@ h3.big{
 	}
 
 	.normal{
-	  	color: rgba(255,255,255,0.8);
+	  	//color: rgba(255,255,255,0.8);
+	  	color: $gray;
 	  	display: block;
 	  	text-align: center;
 	  	font-size: 2.5em;
@@ -487,6 +554,14 @@ p.lead{
 		}
 	}
 }
+
+.thumbnail{
+	a.active{
+		i{
+			transform: rotate(180deg);
+		}
+	}
+}
 /*******************************************
 		Theme Rules
 *******************************************/
@@ -553,7 +628,9 @@ nav.navbar-fixed-top {
 }
 
 .principal-img-bg{
-	background: #000 url('../img/desk-macbook.jpg') no-repeat 80% 60%;
+	//background: #000 url('../img/desk-macbook.jpg') no-repeat 80% 60%;
+	background: #000 url('../img/hero.jpg') no-repeat 80% 50%;
+	background-attachment: fixed;
 	background-size:cover;
   	margin: 0 auto 10vh;
 }
@@ -627,6 +704,14 @@ nav.navbar-fixed-top {
 	.thumbnail{
 		.caption{
 			color: $gray;
+			h3{
+				color:$gray;
+			}
+			a:hover{
+				h3{
+					color: black;
+				}
+			}
 		}
 	}
 }
