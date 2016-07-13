@@ -2184,6 +2184,241 @@
   overflow: visible;
   clip: auto; }
 
+.input {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  margin: 1em;
+  margin-top: 10px;
+  margin-bottom: 2.5em;
+  width: 100%;
+  vertical-align: top; }
+
+.input__field {
+  position: relative;
+  display: block;
+  float: right;
+  padding: 0.8em;
+  width: 60%;
+  border: none;
+  border-radius: 0;
+  background: #f0f0f0;
+  color: #aaa;
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-appearance: none;
+  /* for box shadows to show on iOS */ }
+
+.input__field:focus {
+  outline: none; }
+
+.input__label {
+  display: inline-block;
+  float: right;
+  padding: 0 1em;
+  width: 40%;
+  color: #6a7989;
+  font-weight: bold;
+  font-size: 70.25%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.input__label-content {
+  position: relative;
+  display: block;
+  padding: 1.6em 0;
+  width: 100%; }
+
+/* Akira */
+.input--akira {
+  margin-top: 10px;
+  text-align: center; }
+
+.input__field--akira {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: block;
+  padding: 0 1em;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  text-align: center;
+  font-size: 1.4em; }
+
+.input__label--akira {
+  padding: 0;
+  width: 100%;
+  background: #696a6e;
+  color: #cc6055;
+  cursor: text;
+  margin: 0;
+  font-size: 1em; }
+
+.input__label--akira::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #2f3238;
+  -webkit-transform: scale3d(0.97, 0.85, 1);
+  transform: scale3d(0.97, 0.85, 1);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s; }
+
+.input__label-content--akira {
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s; }
+
+.input__field--akira:focus + .input__label--akira::before,
+.input--filled .input__label--akira::before {
+  -webkit-transform: scale3d(0.99, 0.95, 1);
+  transform: scale3d(0.99, 0.95, 1); }
+
+.input__field--akira:focus + .input__label--akira,
+.input--filled .input__label--akira {
+  cursor: default;
+  pointer-events: none; }
+
+.input__field--akira:focus + .input__label--akira .input__label-content--akira,
+.input--filled .input__label-content--akira {
+  -webkit-transform: translate3d(0, -3.5em, 0);
+  transform: translate3d(0, -3.5em, 0); }
+
+.input-textarea label {
+  height: 285px; }
+
+.input-textarea textarea {
+  padding-top: 1em;
+  resize: none; }
+
+.input-textarea .input__label--akira::before {
+  -webkit-transform: scale3d(0.97, 0.96, 1);
+  transform: scale3d(0.97, 0.96, 1); }
+
+.input-textarea .input__field--akira:focus + .input__label--akira::before,
+.input-textarea .input--filled .input__label--akira::before {
+  -webkit-transform: scale3d(0.99, 0.98, 1);
+  transform: scale3d(0.99, 0.98, 1); }
+
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon.eot");
+  src: url("../fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("../fonts/icomoon.woff") format("woff"), url("../fonts/icomoon.ttf") format("truetype"), url("../fonts/icomoon.svg#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+/* General button style (reset) */
+.btn-p {
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  padding: 25px 80px;
+  display: inline-block;
+  margin: 15px 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  outline: none;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s; }
+
+.btn-p:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s; }
+
+/* Pseudo elements for icons */
+.btn-p:before,
+.icon-heart:after,
+.icon-star:after,
+.icon-plus:after,
+.icon-file:before {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  position: relative;
+  -webkit-font-smoothing: antialiased; }
+
+.icon-send:before {
+  content: "\e900"; }
+
+/* Button 5 */
+.btn-p-5 {
+  background: #EED9A0;
+  color: #0B1135;
+  height: 70px;
+  min-width: 300px;
+  line-height: 24px;
+  font-size: 1.6em;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden; }
+
+.btn-p-5:active {
+  background: white;
+  top: 2px; }
+
+.btn-p-5 span {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 0.3s;
+  -webkit-backface-visibility: hidden;
+  -moz-transition: all 0.3s;
+  -moz-backface-visibility: hidden;
+  transition: all 0.3s;
+  backface-visibility: hidden; }
+
+.btn-p-5:before {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  line-height: 2.5;
+  font-size: 28px;
+  -webkit-transition: all 0.4s ease-out;
+  -moz-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+  background: white; }
+
+.btn-p-5:active:before {
+  color: #0B1135; }
+
+/* Button 5b */
+.btn-p-5b:hover span {
+  -webkit-transform: translateX(200%);
+  -moz-transform: translateX(200%);
+  -ms-transform: translateX(200%);
+  transform: translateX(200%); }
+
+.btn-p-5b:before {
+  left: -100%;
+  top: 0; }
+
+.btn-p-5b:hover:before {
+  left: 0; }
+
 /*******************************************
 		MIXINS
 *******************************************/
@@ -2304,7 +2539,7 @@ nav.navbar-fixed-top {
 
 .how-section {
   background: white;
-  padding: 3% 0; }
+  padding: 3% 0 8%; }
   .how-section h2 {
     text-align: center;
     margin: auto auto 80px; }
@@ -2323,6 +2558,55 @@ nav.navbar-fixed-top {
     transition: color .3s ease-out;
     margin: 0;
     padding: 10px; }
+
+.why-section {
+  background: black;
+  padding: 5% 0 2%;
+  position: relative;
+  z-index: 1; }
+  .why-section:before {
+    background: black;
+    content: '';
+    display: block;
+    height: 30%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    -webkit-backface-visibility: hidden; }
+  .why-section:before {
+    top: 0;
+    transform: skewY(2deg);
+    transform-origin: 100% 0; }
+  .why-section h2 {
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+    margin-top: 0;
+    text-align: center; }
+  .why-section .author {
+    text-align: right;
+    font-size: 1.6em;
+    margin-bottom: 30px; }
+    @media (max-width: 991px) {
+      .why-section .author {
+        font-size: 1.4em; } }
+  .why-section .quote {
+    text-align: center; }
+  .why-section .lead {
+    margin-bottom: 40px; }
+  .why-section .lead, .why-section .quote {
+    font-size: 1.6em; }
+    @media (max-width: 991px) {
+      .why-section .lead, .why-section .quote {
+        font-size: 1.4em; } }
+  .why-section p.author {
+    font-style: italic; }
+  .why-section button {
+    font-family: "Montserrat";
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    margin-top: 30px; }
 
 /*******************************************
 		Modules rules
@@ -2358,10 +2642,18 @@ nav.navbar-fixed-top {
       font-size: 21px; } }
 
 .padding-response {
-  padding: 1px 10% 5%; }
+  padding: 1px 10vw 5%; }
   @media (max-width: 720px) {
     .padding-response {
-      padding: 1px 5% 5%; } }
+      padding: 1px 5vw 5%; } }
+
+.horizontal-padding-response {
+  padding-right: 10vw;
+  padding-left: 10vw; }
+  @media (max-width: 720px) {
+    .horizontal-padding-response {
+      padding-right: 5vw;
+      padding-left: 5vw; } }
 
 .total-height {
   height: 100%; }
@@ -2478,22 +2770,25 @@ h3.big {
   transition-timing-function: ease-in-out;
   -webkit-transition: transform .5s; }
 
-.who-row h2 {
-  text-align: left; }
-.who-row .avatar {
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  min-height: 650px;
-  background: #000 url("../img/avatar.jpg") no-repeat 50% 50%;
-  background-size: cover;
-  -webkit-filter: grayscale(95%);
-  /* Chrome, Safari, Opera */
-  filter: grayscale(95%);
-  content: "";
-  transition: transform .8s , filter .4s;
-  transition-timing-function: ease-in-out;
-  -webkit-transition: transform .8s,-webkit-filter .4s; }
+.who-row {
+  margin-left: 0;
+  margin-right: 0; }
+  .who-row h2 {
+    text-align: left; }
+  .who-row .avatar {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 650px;
+    background: #000 url("../img/avatar.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    -webkit-filter: grayscale(95%);
+    /* Chrome, Safari, Opera */
+    filter: grayscale(95%);
+    content: "";
+    transition: transform .8s , filter .4s;
+    transition-timing-function: ease-in-out;
+    -webkit-transition: transform .8s,-webkit-filter .4s; }
 
 /*******************************************
 		State rules
@@ -2561,6 +2856,7 @@ h3.big {
 		Theme Rules
 *******************************************/
 nav.navbar-fixed-top .navbar-brand {
+  padding-left: 0;
   color: #999; }
   nav.navbar-fixed-top .navbar-brand:hover {
     color: #0B1135; }
@@ -2662,6 +2958,19 @@ nav.navbar-fixed-top #navbar {
     .how-section .thumbnail .caption a:hover h3 {
       color: #0B1135; }
 
+.why-section h2 {
+  color: #EED9A0; }
+  .why-section h2:after {
+    background: #EED9A0; }
+.why-section p.quote, .why-section p.author {
+  font-family: "Open Sans"; }
+.why-section p.lead, .why-section p.quote, .why-section p.author {
+  color: #aaa; }
+  .why-section p.lead strong, .why-section p.quote strong, .why-section p.author strong {
+    color: rgba(238, 217, 160, 0.9); }
+.why-section .input__label--akira {
+  color: #EED9A0; }
+
 #bluelight-redlight-transparent {
   background: linear-gradient(to bottom, rgba(23, 149, 204, 0), rgba(255, 100, 100, 0.4)); }
 
@@ -2689,5 +2998,21 @@ nav.navbar-fixed-top #navbar {
 
 .logo_K:before {
   content: "\e902"; }
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-send:before {
+  content: "\e900"; }
 
 /*# sourceMappingURL=main.css.map */

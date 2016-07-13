@@ -14,6 +14,8 @@
 @import "fa_stacked";
 @import "fa_icons";
 @import "fa_screen-reader";
+@import "form";
+@import "perfect_button";
 
 /*******************************************
 		MIXINS
@@ -89,6 +91,7 @@
 		COLORS
 *******************************************/
 $yellow-light: #EED9A0;
+$yellow-light-tr: rgba(238, 217, 160, 0.9);
 $yellow-dark: #D1BE8F;
 $blue-dark: #0B1135;
 $gray: rgba(85, 85, 85,1);
@@ -235,8 +238,9 @@ nav.navbar-fixed-top {
 	}
 }
 .how-section{
+
 	background: white;
-	padding: 3% 0;
+	padding: 3% 0 8%;
 	h2{
 		text-align:center;
 		margin: auto auto 80px;
@@ -269,6 +273,52 @@ nav.navbar-fixed-top {
 		}
 	}
 }
+
+.why-section{
+	
+	background:black;
+	padding: 5% 0 2%;
+	@include angle('before', $color:black, $angle:2deg);
+
+	h2{
+			letter-spacing: 2px;
+			margin-bottom: 50px;
+			margin-top: 0;
+			text-align: center;
+	}
+
+	.author{
+		text-align:  right;
+		font-size:1.6em;
+		margin-bottom: 30px;
+		@media (max-width: 991px){
+	    	font-size: 1.4em;
+		}
+	}
+	
+	.quote{
+		text-align:center;
+	}
+	.lead {
+		margin-bottom: 40px;
+	}
+	.lead,.quote{
+		font-size:1.6em;
+		@media (max-width: 991px){
+	    	font-size: 1.4em;
+		}
+	}
+	p.author {
+    	font-style: italic;
+	}
+	button{
+		font-family: "Montserrat";
+		margin-right: auto;
+		margin-left: auto;
+		display: block;
+		margin-top: 30px;
+	}
+}
 /*******************************************
 		Modules rules
 *******************************************/
@@ -295,9 +345,17 @@ nav.navbar-fixed-top {
 	}
 }
 .padding-response{
-	padding: 1px 10% 5%;
+	padding: 1px 10vw 5%;
 	@media(max-width:720px){
-		padding: 1px 5% 5%;
+		padding: 1px 5vw 5%;
+	}
+}
+.horizontal-padding-response{
+	padding-right:	10vw;
+	padding-left:	10vw;
+	@media(max-width:720px){
+		padding-right:	5vw;
+		padding-left:	5vw;
 	}
 }
 
@@ -447,6 +505,8 @@ h3.big{
 }
 
 .who-row{
+	margin-left:0;
+	margin-right: 0 ;
 	h2 {
 		text-align: left;
 	}
@@ -568,6 +628,7 @@ p.lead{
 *******************************************/
 nav.navbar-fixed-top {
 	.navbar-brand{
+		padding-left:0;
 		color: #999;
 		&:hover{
 			color:$blue-dark;
@@ -734,7 +795,27 @@ nav.navbar-fixed-top {
 		}
 	}
 }
+.why-section{
+	h2{
+		color: $yellow-light;
+		&:after{
+			background: $yellow-light;
+		}
+	}
+	p.quote , p.author {
+		font-family:"Open Sans";
+	}
+	p.lead, p.quote, p.author{
 
+		color: #aaa;
+		strong{
+			color: $yellow-light-tr;
+		}
+	}
+	.input__label--akira {
+		color: $yellow-light;
+	}
+}
 #bluelight-redlight-transparent{
   	background: $gradient-redbluelight-tobottom;
   }
@@ -767,4 +848,22 @@ nav.navbar-fixed-top {
 }
 .logo_K:before {
     content: "\e902";
+}
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' /*!important*/;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-send:before {
+    content: "\e900";
 }

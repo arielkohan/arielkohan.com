@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ariel Kohan | Software Developer</title>
-    <!--<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,300italic,600italic' rel='stylesheet' type='text/css'>-->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,300italic,600italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/main.css">
@@ -12,7 +12,7 @@
   <body data-spy="scroll" data-target=".navbar" data-offset="61">
     <!-- HEADER OR FIXED NAVBAR-->
       <nav class="navbar navbar-default navbar-fixed-top hide-nav">
-        <div class="container">
+        <div class="horizontal-padding-response">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
               <span class="sr-only">Toggle navigation</span>
@@ -199,11 +199,48 @@
         </div>
       </div>
 
-      <div id="why-section" class="section container row hide-section">
-        <h2 class="h2-mont">WHY ME?</h2>
-        
-            
-        
+      <div id="why-section" class="why-section">
+        <div class="padding-response">
+          <h2 class="h2-mont big">CONTACT</h2>
+          <p class="quote">"I don't dream at night, I dream all day; I dream for a living." </p>
+          <p class="author"> – Steven Spielberg</p>
+          <p class="lead ">
+            Do you have an idea, an opportunity to solve a problem or you just want to know me more? C'mon then, <strong>Let's Talk!</strong>
+          </p>
+          <form action="index.html" method="">
+            <div class="row">
+              <div class="col-md-6">
+                <span class="input input--akira">
+                  <input class="input__field input__field--akira" type="text" id="name" name="user_fullname" />
+                  <label class="input__label input__label--akira" for="name">
+                    <span class="input__label-content input__label-content--akira">Full Name</span>
+                  </label>
+                </span>
+                <span class="input input--akira">
+                  <input class="input__field input__field--akira" type="email" id="mail" name="user_email"/>
+                  <label class="input__label input__label--akira" for="mail">
+                    <span class="input__label-content input__label-content--akira">E-mail</span>
+                  </label>
+                </span>
+                <span class="input input--akira">
+                  <input class="input__field input__field--akira" type="text" id="subject" name="user_subject"/>
+                  <label class="input__label input__label--akira" for="subject">
+                    <span class="input__label-content input__label-content--akira">Subject</span>
+                  </label>
+                </span>
+              </div>
+              <div class="col-md-6">
+                <span class="input input--akira input-textarea">
+                  <textarea class="input__field input__field--akira" id="message" name="user_message"></textarea>
+                  <label class="input__label input__label--akira" for="message">
+                    <span class="input__label-content input__label-content--akira">Message</span>
+                  </label>
+                </span>
+              </div>
+            </div>
+            <button type="submit" class="btn-p btn-p-5 btn-p-5b icon-send"><span>SUBMIT</span></button>
+          </form>
+        </div>
       </div>
   
 
@@ -227,6 +264,8 @@
                     ).init();
       });
     </script> 
+    <script src="js/classie.js"></script>
+    <script src="js/input.js" type="text/javascript"></script>
   </body>
 </html>
 
