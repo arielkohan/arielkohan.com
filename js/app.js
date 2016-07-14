@@ -115,18 +115,22 @@ function initThumbnailsToggle(){
 ***********************************/
 
 $(document).ready(function(){
-//  $(".parallax-window").parallax({imageSrc: './img/desk-mac-devices-bl.jpg'});
+
   refreshVisibilityNavbar();
-  //refreshSections();
   addListenersToScroll();
   addNavLinesInteractivy();
   initThumbnailsToggle();
- // initSmoothScroll();
+   new WOW(
+            {
+              boxClass:     'wow',      // default
+              animateClass: 'animated', // default
+              offset:       10,          // default
+              mobile:       true,       // default
+              live:         true        // default
+            }).init();
 
-  //$(document).scroll(function(){
   $(document).on("scroll",function(){
    refreshVisibilityNavbar();
-  // refreshSections();
     });
 
   $(".navbar").on("activate.bs.scrollspy", function(){
