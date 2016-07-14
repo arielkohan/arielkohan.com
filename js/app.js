@@ -110,16 +110,26 @@ function initThumbnailsToggle(){
   });
 }
 
-/***********************************
-            APP
-***********************************/
-
-$(document).ready(function(){
-
+function initRefreshVisibilityNavbar(){
   refreshVisibilityNavbar();
-  addListenersToScroll();
+
+  $(document).on("scroll",function(){
+   refreshVisibilityNavbar();
+    });
+}
+
+function initNavlinesInterativity(){
   addNavLinesInteractivy();
-  initThumbnailsToggle();
+  $(".navbar").on("activate.bs.scrollspy", function(){
+      addNavLinesInteractivy();
+  });
+
+  $(window).on('resize orientationChange',function(){
+      addNavLinesInteractivy();
+  });
+}
+
+function initWow(){
    new WOW(
             {
               boxClass:     'wow',      // default
@@ -128,17 +138,17 @@ $(document).ready(function(){
               mobile:       true,       // default
               live:         true        // default
             }).init();
+}
 
-  $(document).on("scroll",function(){
-   refreshVisibilityNavbar();
-    });
+/***********************************
+            APP
+***********************************/
 
-  $(".navbar").on("activate.bs.scrollspy", function(){
-      addNavLinesInteractivy();
-    });
+$(document).ready(function(){
 
-  $(window).on('resize orientationChange',function(){
-      addNavLinesInteractivy();
-    });
-
+  initRefreshVisibilityNavbar();
+  addListenersToScroll();
+  initNavlinesInterativity();
+  initThumbnailsToggle();
+  initWow();
 });
