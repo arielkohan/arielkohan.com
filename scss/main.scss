@@ -20,6 +20,8 @@
 @import "fonts";
 @import "mixins";
 @import "bootstrap";
+@import "dialog";
+@import "dialog-wilma";
 
 
 /*******************************************
@@ -138,7 +140,7 @@ nav.navbar-fixed-top {
 		text-align: right;
 	}
 }
-.how-section{
+.skills-section{
 	//@include angle('before', $color:$yellow-light, $angle:2deg);
 	background: white;
 	padding: 3% 0 8%;
@@ -175,10 +177,10 @@ nav.navbar-fixed-top {
 	}
 }
 
-.why-section{
+.contact-section{
 	overflow: hidden;
 	background:black;
-	padding: 5% 0 2%;
+	padding: 3% 0 2%;
 	//@include angle('before', $color:black, $angle:2deg);
 	.right-col, .left-col{
 		padding-right:30px;
@@ -209,7 +211,7 @@ nav.navbar-fixed-top {
 		text-align:center;
 	}
 	.lead {
-		margin-bottom: 40px;
+		margin-bottom: 30px;
 	}
 	.lead,.quote{
 		font-size:1.6em;
@@ -225,7 +227,7 @@ nav.navbar-fixed-top {
 		margin-right: auto;
 		margin-left: auto;
 		display: block;
-		margin-top: 30px;
+		margin-top: 10px;
 	}
 }
 /*******************************************
@@ -427,7 +429,7 @@ h3.big{
 		margin: 0; 	
   		width: 100%;
   		height: 100%;	
-  		min-height: 650px;
+  		min-height: 700px;
 		background: #000 url('../img/avatar.jpg')  no-repeat 50% 50%;
 		background-size:cover;
 		-webkit-filter: grayscale(95%); /* Chrome, Safari, Opera */
@@ -517,8 +519,11 @@ p.lead{
 			-webkit-filter: grayscale(60%); /* Chrome, Safari, Opera */
  			filter: grayscale(60%);
 		}
+		@media(max-width: 1208px) and (min-width:1025px){
+			min-height: 800px;
+		}
 		@media (max-width: 1024px){
-			min-height: 700px;
+			min-height: 850px;
 		}
 	}
 	.rel-pos:hover{
@@ -534,6 +539,19 @@ p.lead{
 			transform: rotate(180deg);
 		}
 	}
+}
+.dialog-image, .dialog-p{
+	margin: 0 auto 20px;
+	text-align:center;
+//	display: none;
+}
+
+button[data-dialog-close]{
+	margin: 30px auto 10px;
+	padding: 10px 90px;
+    font-size: 1.4em;
+    transition: background .4s, border-color .4s , color .6s;
+    transition-timing-function: ease-in-out;
 }
 /*******************************************
 		Theme Rules
@@ -626,9 +644,13 @@ nav.navbar-fixed-top {
 }
 .who-row{
 	background: $blue-dark;
-	color: $yellow-light;
+	color: rgba(255,255,255,0.8);
+	a{
+		font-style: italic;
+		color: $yellow-light;
+	}
 	strong {
-		color: white;
+		
 	}
 	h2 {
 		color: $yellow-light;
@@ -640,6 +662,7 @@ nav.navbar-fixed-top {
 	}
 	.rel-pos:hover{
 		.overlay{
+			letter-spacing: 1px;
 			background: rgba(11, 17, 53,0.9);
 		}
 	}
@@ -671,7 +694,7 @@ nav.navbar-fixed-top {
   	
 }
 
-.how-section {
+.skills-section {
 	background: $yellow-light;
 	color: $blue-dark;
 	h3{
@@ -708,7 +731,7 @@ nav.navbar-fixed-top {
 		}
 	}
 }
-.why-section{
+.contact-section{
 	position:relative;
 	
 	h2{
@@ -733,6 +756,31 @@ nav.navbar-fixed-top {
 	}
 }
 
+button[data-dialog-close]{
+	background: white;
+    border: $blue-dark 2px solid;
+    color: $blue-dark;
+}
+
+button[data-dialog-close]:hover,
+button[data-dialog-close]:focus{
+	background: $blue-dark;
+    border: transparent 2px solid;
+    color: white;
+}
+button[data-dialog-close]:disabled{
+	background:$gray-transparent;
+	color: $gray;
+	border-color:transparent;
+	display:none;
+}
+
+
+button[data-dialog-close]:active{
+	background:black;
+	color: $yellow-light;
+	border: transparent 2px solid;
+}
 
 /**************************
 	 EXTRAS

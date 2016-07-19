@@ -18,6 +18,7 @@ function refreshVisibilityNavbar(){
 
 function addListenersToScroll(){
   $( "#btn-group-target button a," +
+    "#btn-group-target button," +
     " #arrow-btn," +
     " .navbar .nav li a," +
     " .navbar-brand" ).on('click', function(event){
@@ -25,12 +26,16 @@ function addListenersToScroll(){
   // Prevent default anchor click behavior
   event.preventDefault();
   // Make sure this.hash has a value before overriding default behavior
+    
   if (this.hash !== "") {
-
-
+    var hash ;
+    if($(this).hasClass("btn")){
+      hash = $(this).children("a").attr("href");
+    } else {
+      hash = $(this).attr("href")
+    }
     // Store hash (#)
-    var hash = this.hash;
-
+    
     // Using jQuery's animate() method to add smooth page scroll
     // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area (the speed of the animation)
     $('html, body').animate({
@@ -177,6 +182,40 @@ function clearErrors(){
 
 }
 
+function setDialogMessage(type, name){
+  var $h2 = $("#somedialog .dialog-inner h2"),
+      $h2_strong = $("#somedialog .dialog-inner h2 strong"),
+      $p = $("#somedialog .dialog-inner p"),
+      $img = $("#somedialog .dialog-inner img"),
+      $button = $("#somedialog .dialog-inner div button");
+
+  if(type && type === "waiting"){
+    $h2.text("Wait a sec, " + name + " ...");
+    $img.attr("src","img/Forrest.gif");
+    $p.css("display", "none");
+    $img.css("display","block");
+    $button.attr("disabled","");
+    $button.css("display","none");
+  } else if (type && type === "success"){
+    $p.text("I will respond as soon as possible. Have a great day ahead!");
+    $h2.text("Thank you for getting in touch, " + name + "!");
+    $button.removeAttr("disabled");
+    $img.css("display","none");
+    $p.css("display","block");
+    $button.css("display","block");
+    //$button.slideDown("slow");
+  } else if (type && type === "error"){
+    $p.text("Please, try again later.");
+    $h2.text("Oops, there was an error, " + name + ".");
+    $button.removeAttr("disabled");
+    $img.css("display","none");
+    $p.css("display","block");
+    //$button.slideDown("slow");
+    $button.css("display","block");
+  } else throw "Problem with the dialog";
+  
+}
+
 function sendMessage(){
   clearErrors();
   var errors = checkForm();
@@ -184,27 +223,37 @@ function sendMessage(){
     //send message
     console.log("no errors in form");
     console.log($("form").serialize());
-    /*var user_name = $("#name")[0].text(),
-        user_email = $("#email")[0].text(),
-        user_subject = $("#subject")[0].text(),
-        user_message = $("#message")[0].text();*/
+    var dialogToggle = new DialogFx(somedialog);
     $.ajax({
       url: 'https://formspree.io/arielkohan94@gmail.com',
       method: 'POST',
       data: $("form").serialize(),
       dataType: 'json',
       beforeSend: function() {
-        //$("form").append('<div class="alert alert--loading">Sending message…</div>');
+
+        setDialogMessage("waiting", $("#name").val() );
+        if(! dialogToggle.isOpen) 
+          dialogToggle.toggle();
       },
       success: function(data) {
-       /* $("form").find('.alert--loading').hide();
-        $("form").append('<div class="alert alert--success">Message sent!</div>');*/
         console.log("success: " + data);
+        if(dialogToggle.isOpen)
+          dialogToggle.toggle();
+
+        setDialogMessage("success",  $("#name").val());
+        setTimeout(function(){
+          dialogToggle.toggle();
+        } , 200);
       },
       error: function(err) {
-        /*$("form").find('.alert--loading').hide();
-        $("form").append('<div class="alert alert--error">Ops, there was an error.</div>');*/
         console.log("error: " + err);
+        if(dialogToggle.isOpen)
+          dialogToggle.toggle();
+
+        setDialogMessage("error",  $("#name").val());
+        setTimeout(function(){
+          dialogToggle.toggle();
+        } , 200);
       }
     });
 
@@ -212,6 +261,7 @@ function sendMessage(){
 }
 
 function initSendMessage(){
+  
   $("form").submit(function(event){
     console.log("Sending Message");
     event.preventDefault();

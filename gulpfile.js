@@ -17,6 +17,9 @@ gulp.task("concatScripts", function(){
 				'js/wow.min.js',
 				'js/main.js',
 				'js/classie.js',
+				'js/modernizr.custom.js',
+				'js/dialogFx.js',
+				'js/init-dialog.js',
 				'js/input.js'
 		])	
 			.pipe(gulpMaps.init())
@@ -58,7 +61,8 @@ gulp.task("clean", function(){
 
 gulp.task("build",['minifyScripts', 'minifyCss'], function(){
 	return gulp.src(["css/main.min.css", "css/animate.min.css", "js/app.min.js", 'index.html',
-					 "img/**", "fonts/**"], { base: './' })
+					 "img/**", "fonts/**", "*.png", "*.ico","manifest.json", "browserconfig.xml",
+					 "safari*.svg"], { base: './' })
 			.pipe(gulp.dest('dist'));
 });
 
