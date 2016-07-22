@@ -27,7 +27,7 @@
 /*******************************************
 		Base rules
 *******************************************/
-body {	font-family: 'aller', 'Open Sans', sans-serif; background: $yellow-light; }
+body {	font-family: 'Montserrat', 'Open Sans', sans-serif; background: $yellow-light; }
 img{	max-width: 100%;	}
 p {	text-align: justify;	}
 /*******************************************
@@ -117,7 +117,6 @@ nav.navbar-fixed-top {
 			transition: transform .6s ease-in-out, background .6s ease-in-out;
 			h3{
 				text-align: center;
-				font-family: "Montserrat";
 			}
 			p{
 				font-size: 16px;
@@ -337,11 +336,24 @@ nav.navbar-fixed-top {
   	right: 0;
 }
 
-p.lead , h2.h2-mont, h3.h3-mont { letter-spacing: 1px; 	 }
+p.lead , h2.h2-mont, h4.h4-mont,h2.h2-norw, h3.h3-koll { letter-spacing: 1px; 	 }
 
-h2.h2-mont,h3.h3-mont{
+h2.h2-mont,h4.h4-mont{
 	font-family: 'Montserrat', 'Open Sans', sans-serif;
 }
+
+h2.h2-norw{
+	font-family: 'Norwester', 'Montserrat', 'Open Sans', sans-serif;
+	letter-spacing:2px;
+	font-weight: normal;
+}
+
+h3.h3-koll {
+	font-family: 'Kollektif', 'Montserrat', 'Open Sans', sans-serif;	
+	font-weight: normal;
+	text-transform: uppercase;
+}
+
 h2.big {
 		font-size: 3em;
 		font-weight: bold;
@@ -626,10 +638,16 @@ nav.navbar-fixed-top {
 }
 
 .ppal-section{
+	#dev-h2{
+		font-family: "Norwester", "Montserrat", "Open Sans", sans-serif;
+	}
 	.button-div {
 		button.btn {
 			background-color: $yellow-light;	
 			border-color: rgba(11, 17, 53,0.3);
+			font-family: "Norwester", "Montserrat", "Open Sans", sans-serif;
+			letter-spacing: 2px;
+			text-transform: uppercase;
 			&:hover{
 				background-color: $yellow-dark;
 			}
@@ -714,17 +732,19 @@ nav.navbar-fixed-top {
 	}
 	.thumbnail{
 		a.active{
-			h3{
+			h4{
 				color: $blue-dark;
 			}
 		}
 		.caption{
 			color: $blue-dark;
-			h3{
+			h4{
 				color:$gray;
+				text-align: center;
+				font-weight: bold;
 			}
 			a:hover{
-				h3{
+				h4{
 					color: $blue-dark;
 				}
 			}
