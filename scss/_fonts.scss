@@ -31,6 +31,19 @@
     font-style: normal;
 }
 @font-face {
+    font-family: 'Montserrat';
+    src:   url('../fonts/Montserrat-Light.otf') format('opentype');
+    font-weight: lighter;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Norwester';
+    src:   url('../fonts/norwester.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
 	font-family: 'Open Sans';
 	src:   url('../fonts/OpenSans-Bold.ttf') format('truetype');
     font-weight: bold;
