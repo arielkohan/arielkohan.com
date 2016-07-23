@@ -27,7 +27,16 @@
 /*******************************************
 		Base rules
 *******************************************/
-body {	font-family: 'Montserrat', 'Open Sans', sans-serif; background: $yellow-light; }
+body {
+	font-family: 'Montserrat', 'Open Sans', sans-serif;
+	background: $yellow-light;
+	-moz-font-feature-settings: "kern";
+	-moz-font-feature-settings: "kern=1";
+	-ms-font-feature-settings: "kern";
+	-o-font-feature-settings: "kern";
+	-webkit-font-feature-settings: "kern";
+	font-feature-settings: "kern";
+}
 img{	max-width: 100%;	}
 p {	text-align: justify;	}
 /*******************************************
@@ -198,12 +207,12 @@ nav.navbar-fixed-top {
 	}
 
 	.author{
-		text-align:  right;
-		font-size:1.6em;
+		text-align:  center;
+		//font-size:1.6em;
 		margin-bottom: 30px;
-		@media (max-width: 991px){
+		/*@media (max-width: 991px){
 	    	font-size: 1.4em;
-		}
+		}*/
 	}
 	
 	.quote{
@@ -212,22 +221,29 @@ nav.navbar-fixed-top {
 	.lead {
 		margin-bottom: 30px;
 	}
-	.lead,.quote{
-		font-size:1.6em;
-		@media (max-width: 991px){
-	    	font-size: 1.4em;
-		}
-	}
+	
 	p.author {
     	font-style: italic;
 	}
 	button , input.btn-p{
-		font-family: "Montserrat";
+		font-family: 'Montserrat', 'Open Sans', sans-serif;
+		font-weight: bold;
+		letter-spacing: 1px;
 		margin-right: auto;
 		margin-left: auto;
 		display: block;
 		margin-top: 10px;
 	}
+}
+p.lead, .quote, .author{
+		font-size:1.25em;
+		
+		@media (max-width: 34em){
+	    	font-size: 1em;
+		}
+		@media (min-width: 94em){
+			font-size: 1.5em;
+		}
 }
 /*******************************************
 		Modules rules
@@ -248,16 +264,16 @@ nav.navbar-fixed-top {
 .ov-hidden{
 	overflow: hidden;
 }
-.lead{
+/*.lead{
 	font-size:20px;
 	@media (min-width: 1024px){
     font-size: 21px;
 	}
-}
+}*/
 .padding-response{
-	padding: 1px 10vw 5%;
+	padding: 1px 10vw 2%;
 	@media(max-width:767px){
-		padding: 1px 5vw 5%;
+		padding: 1px 5vw 2%;
 	}
 }
 .horizontal-padding-response{
@@ -355,12 +371,26 @@ h3.h3-koll {
 }
 
 h2.big {
-		font-size: 3em;
-		font-weight: bold;
+	font-size: 5em;
+	font-weight: bold;
+
+	@media (max-width: 34em){
+    	font-size: 3em;
+	}
+	@media (min-width: 94em){
+		font-size: 6em;
+	}
 }
 h3.big{	
-	font-size:2.4em;
+	font-size:2em;
 	font-weight: bold;
+
+	@media (max-width: 34em){
+    	font-size: 1.4em;
+	}
+	@media (min-width: 94em){
+		font-size: 3em;
+	}
 }
 
 .ppal-section{
@@ -441,7 +471,7 @@ h3.big{
 		margin: 0; 	
   		width: 100%;
   		height: 100%;	
-  		min-height: 700px;
+  		min-height: 550px;
 		background: #000 url('../img/avatar.jpg')  no-repeat 50% 50%;
 		background-size:cover;
 		-webkit-filter: grayscale(95%); /* Chrome, Safari, Opera */
@@ -457,34 +487,26 @@ h3.big{
 		State rules
 *******************************************/
 .section-title {
-  	padding: 50px 0 0;
-  	margin: 50px auto;
+  	padding: 5rem 0 0;
+  	margin: 0 auto;
   	display: block;
   	letter-spacing: 2px;
   	&:after{
   		height: 5px;
   		width: 75%;
-  		margin: 30px auto 50px 0;
+  		margin: 2rem auto 5rem 0;
   		content: "";
 		display: block;
 	}
 }
   	
-h2.big{
-	@media(max-width: 350px){
-		font-size: 2em;
-	}
-}
-h3.big{	
-	@media(max-width: 350px){
-		font-size: 1.6em;
-	}
-}
-p.lead{
+
+
+/*p.lead{
 	@media(max-width: 350px){
 		font-size: 1.2em;
 	}
-}
+}*/
 
 .ppal-section{
 	.logo-img{
@@ -532,10 +554,13 @@ p.lead{
  			filter: grayscale(60%);
 		}
 		@media(max-width: 1208px) and (min-width:1025px){
-			min-height: 800px;
+			min-height: 600px;
 		}
-		@media (max-width: 1024px){
-			min-height: 850px;
+		@media(max-width: 1024px) and (min-width:866px){
+			min-height: 660px;
+		}
+		@media (max-width: 865px){
+			min-height: 710px;
 		}
 	}
 	.rel-pos:hover{
@@ -761,14 +786,18 @@ nav.navbar-fixed-top {
 		}
 	}
 	p.quote , p.author {
-		font-family:"Open Sans";
+		font-family:'Montserrat', 'Open Sans', sans-serif;
 		font-weight: lighter;
+	}
+	p.quote{
+		font-weight: bold;
 	}
 	p.lead, p.quote, p.author{
 
 		color: #aaa;
 		strong{
-			color: $yellow-light-tr;
+			//color: $yellow-light-tr;
+			font-weight: bold;
 		}
 	}
 	.input__label--akira {
@@ -777,6 +806,10 @@ nav.navbar-fixed-top {
 }
 
 button[data-dialog-close]{
+	font-family: 'Montserrat', 'Open Sans', sans-serif;
+	font-weight: bold;
+	letter-spacing:1px;
+	text-transform:uppercase;
 	background: white;
     border: $blue-dark 2px solid;
     color: $blue-dark;
@@ -801,6 +834,7 @@ button[data-dialog-close]:active{
 	color: $yellow-light;
 	border: transparent 2px solid;
 }
+
 
 /**************************
 	 EXTRAS
