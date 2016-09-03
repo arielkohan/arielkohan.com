@@ -223,7 +223,7 @@ nav.navbar-fixed-top {
 	}
 	
 	p.author {
-    	font-style: italic;
+    	//font-style: italic;
 	}
 	button , input.btn-p{
 		font-family: 'Montserrat', 'Open Sans', sans-serif;
@@ -689,7 +689,8 @@ nav.navbar-fixed-top {
 	background: $blue-dark;
 	color: rgba(255,255,255,0.8);
 	a{
-		font-style: italic;
+		//font-style: italic;
+		font-weight: bold;
 		color: $yellow-light;
 	}
 	strong {

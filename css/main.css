@@ -8634,8 +8634,6 @@ nav.navbar-fixed-top {
     text-align: center; }
   .contact-section .lead {
     margin-bottom: 30px; }
-  .contact-section p.author {
-    font-style: italic; }
   .contact-section button, .contact-section input.btn-p {
     font-family: 'Montserrat', 'Open Sans', sans-serif;
     font-weight: bold;
@@ -9017,7 +9015,7 @@ nav.navbar-fixed-top #navbar {
   background: #0B1135;
   color: rgba(255, 255, 255, 0.8); }
   .who-row a {
-    font-style: italic;
+    font-weight: bold;
     color: #EED9A0; }
   .who-row h2 {
     color: #EED9A0; }
