@@ -8870,6 +8870,11 @@ h3.big {
 /*******************************************
 		State rules
 *******************************************/
+@media (max-width: 1024px) {
+  .wow {
+    animation: none !important;
+    visibility: visible !important; } }
+
 .section-title {
   padding: 5rem 0 0;
   margin: 0 auto;
