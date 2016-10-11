@@ -602,6 +602,12 @@ button[data-dialog-close]{
     font-size: 1.4em;
     transition: background .4s, border-color .4s , color .6s;
     transition-timing-function: ease-in-out;
+    @media (max-width: 500px) and (min-width: 401px){
+    	padding: 10px 65px;
+    }
+     @media (max-width: 400px){
+    	padding: 10px 50px;
+    }
 }
 /*******************************************
 		Theme Rules
