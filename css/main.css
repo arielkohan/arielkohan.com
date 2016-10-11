@@ -8596,19 +8596,25 @@ nav.navbar-fixed-top {
     margin: auto auto 80px; }
   .skills-section h3.big {
     margin-bottom: 50px; }
-  .skills-section .thumbnail i {
-    transition: transform .6s ease-in-out; }
-  .skills-section .thumbnail .show-desc {
-    text-decoration: none;
-    cursor: pointer; }
-  .skills-section .thumbnail .caption .description {
-    padding-top: 10px; }
-  .skills-section .thumbnail .caption h3, .skills-section .thumbnail .caption p {
-    text-align: center; }
-  .skills-section .thumbnail .caption h3 {
-    transition: color .3s ease-out;
-    margin: 0;
-    padding: 10px; }
+  .skills-section .thumbnail {
+    padding: 0; }
+    .skills-section .thumbnail i {
+      transition: transform .6s ease-in-out; }
+    .skills-section .thumbnail .show-desc {
+      text-decoration: none;
+      cursor: pointer; }
+    .skills-section .thumbnail .caption {
+      padding: 0; }
+      .skills-section .thumbnail .caption .description {
+        padding: 10px;
+        line-height: 1.3;
+        text-align: justify; }
+      .skills-section .thumbnail .caption h4, .skills-section .thumbnail .caption p {
+        text-align: center; }
+      .skills-section .thumbnail .caption h4 {
+        transition: color .3s ease-out;
+        margin: 0;
+        padding: 15px 10px; }
 
 .contact-section {
   overflow: hidden;
