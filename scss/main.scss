@@ -476,7 +476,7 @@ h3.big{
   		width: 100%;
   		height: 100%;	
   		min-height: 550px;
-		background: #000 url('../img/avatar.jpg')  no-repeat 50% 50%;
+		background: $yellow-light url('../img/avatar.jpg')  no-repeat 50% 50%;
 		background-size:cover;
 		-webkit-filter: grayscale(95%); /* Chrome, Safari, Opera */
 	 	filter: grayscale(95%);
@@ -675,7 +675,7 @@ nav.navbar-fixed-top {
 }
 
 .principal-img-bg{
-	background: #000 url('../img/hero.jpg') no-repeat 80% 50%;
+	background: $yellow-light url('../img/hero.jpg') no-repeat 80% 50%;
 	background-attachment: fixed;
 	background-size:cover;
   	margin: 0 auto 10vh;
@@ -735,7 +735,7 @@ nav.navbar-fixed-top {
 	background:transparent;
 	padding-bottom:0;
 	.div-img-bg{
-		background: #000 url('../img/desk-mac-devices-wh.jpg') no-repeat 50% 0% ;
+		background: #f5f5f5 url('../img/desk-mac-devices-wh.jpg') no-repeat 50% 0% ;
 		background-size:cover;
 		background-attachment: fixed;
   	}
