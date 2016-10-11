@@ -8579,13 +8579,13 @@ nav.navbar-fixed-top {
     font-size: 16px;
     text-align: center; }
 
-.what-section {
+.strengths-section {
   display: block; }
-  .what-section .color-transparent {
+  .strengths-section .color-transparent {
     top: 0;
     left: 0;
     right: 0; }
-  .what-section h2 {
+  .strengths-section h2 {
     text-align: right; }
 
 .skills-section {
@@ -9042,19 +9042,19 @@ nav.navbar-fixed-top #navbar {
     letter-spacing: 1px;
     background: rgba(11, 17, 53, 0.9); }
 
-.what-section {
+.strengths-section {
   background: transparent;
   padding-bottom: 0; }
-  .what-section .div-img-bg {
+  .strengths-section .div-img-bg {
     background: #000 url("../img/desk-mac-devices-wh.jpg") no-repeat 50% 0%;
     background-size: cover;
     background-attachment: fixed; }
-  .what-section p.lead {
+  .strengths-section p.lead {
     margin: 30px 0 50px; }
-  .what-section .content {
+  .strengths-section .content {
     color: #0B1135;
     text-shadow: 0px 1px 5px white; }
-    .what-section .content .section-title:after {
+    .strengths-section .content .section-title:after {
       background-color: #0B1135;
       display: block;
       margin-right: 0;
