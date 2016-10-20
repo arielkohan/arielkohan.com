@@ -60,7 +60,7 @@ gulp.task("clean", function(){
 });
 
 gulp.task("build",['minifyScripts', 'minifyCss'], function(){
-	return gulp.src(["css/main.min.css", "css/animate.min.css", "js/app.min.js", 'index.html',
+	return gulp.src(["css/main.min.css", "css/animate.min.css", "js/app.min.js", 'index.html', 'CNAME',
 					 "img/**", "fonts/**", "*.png", "*.ico","manifest.json", "browserconfig.xml",
 					 "safari*.svg"], { base: './' })
 			.pipe(gulp.dest('dist'));
